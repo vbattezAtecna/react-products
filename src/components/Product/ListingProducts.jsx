@@ -10,10 +10,12 @@ export default class ListingProducts extends Component {
     this.state = {
       products: []
     }
+
+    this.api = "http://5bd9bd610bab79001346a03c.mockapi.io";
   }
 
   componentDidMount(){
-    axios.get(`http://5bd9bd610bab79001346a03c.mockapi.io/products`)
+    axios.get(`${this.api}/products`)
       .then(res => {
         const products = res.data;
         this.setState({ products });
@@ -27,18 +29,24 @@ export default class ListingProducts extends Component {
           return (
             <SingleProduct
               key={product.id}
+              product={product}
             />
           )
         })
     }
 
     return (
-      <section className="listing-product">
-        <h1>All products</h1>
-        <div className="card-columns">
-          {products}
-        </div>
-      </section>
+      (products) ?
+        <section className="listing-product">
+          <h1>All products</h1>
+          <div className="card-columns">
+            {products}
+          </div>
+        </section>
+      :
+        <section>
+          <p>Il n'y a pas d'article</p>
+        </section>
     )
   }
 }
