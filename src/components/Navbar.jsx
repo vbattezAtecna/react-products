@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import HomePage     from "../pages/Homepage"
 import ProductsPage from "../pages/ProductsPage"
+import SingleProductsPage from "../pages/SingleProductsPage"
 
 export default function Navbar() {
   return (
@@ -22,6 +23,7 @@ export default function Navbar() {
 
         <Route path="/" exact    component={HomePage} />
         <Route path="/products/" component={ProductsPage} />
+        <Route path="/product/:id" component={SingleProductsPage} />
       </React.Fragment>
     </Router>
   )
