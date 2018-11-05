@@ -4,7 +4,7 @@ import ListingProducts from '../components/Product/ListingProducts'
 
 export default function ProductPage() {
   return (
-    <div className="products__page">
+    <div className="page products__page">
       <ListingProducts />
     </div>
   )

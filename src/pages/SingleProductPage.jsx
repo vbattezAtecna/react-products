@@ -29,7 +29,7 @@ export default class SingleProductPage extends Component {
     console.log(product);
     
     return (
-      <section className="single-product__page">
+      <section className="page single-product__page">
         <h1>{product.title}</h1>
         <div className="card-columns">
         </div>
