@@ -1,30 +1,18 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import HomePage     from "../pages/Homepage"
-import ProductsPage from "../pages/ProductsPage"
-import SingleProductsPage from "../pages/SingleProductsPage"
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <Router>
-      <React.Fragment>
-
-        <nav className="navbar">
-          <ul className="nav nav-pills">
-            <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link active" to="/products/">Products</Link>
-            </li>
-          </ul>
-        </nav>
-
-        <Route path="/" exact    component={HomePage} />
-        <Route path="/products/" component={ProductsPage} />
-        <Route path="/product/:id" component={SingleProductsPage} />
-      </React.Fragment>
-    </Router>
+    <nav className="navbar">
+      <ul className="nav nav-pills">
+        <li className="nav-item">
+          <NavLink to="/" exact className="nav-link" activeClassName="active">Home</NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink to="/products/" className="nav-link" activeClassName="active">Products</NavLink>
+        </li>
+      </ul>
+    </nav>
   )
 }
