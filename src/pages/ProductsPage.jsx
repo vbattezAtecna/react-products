@@ -2,9 +2,9 @@ import React from 'react'
 
 import ListingProducts from '../components/Product/ListingProducts'
 
-export default function ProjectsPage() {
+export default function ProductPage() {
   return (
-    <div className="projects__page">
+    <div className="products__page">
       <ListingProducts />
     </div>
   )

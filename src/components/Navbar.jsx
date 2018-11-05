@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import HomePage     from "../pages/Homepage"
-import ProjectsPage from "../pages/ProjectsPage"
+import ProductsPage from "../pages/ProductsPage"
 
 export default function Navbar() {
   return (
@@ -15,13 +15,13 @@ export default function Navbar() {
               <Link className="nav-link" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" to="/projects/">Projects</Link>
+              <Link className="nav-link active" to="/products/">Products</Link>
             </li>
           </ul>
         </nav>
 
         <Route path="/" exact    component={HomePage} />
-        <Route path="/projects/" component={ProjectsPage} />
+        <Route path="/products/" component={ProductsPage} />
       </React.Fragment>
     </Router>
   )
